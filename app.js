@@ -135,7 +135,8 @@
         const right = u === q.correctIndex;
         const your = u != null ? labels[u] + '. ' + q.options[u] : '未作答';
         const ans = labels[q.correctIndex] + '. ' + q.options[q.correctIndex];
-        const statement = STATEMENTS[q.id - 1] ? STATEMENTS[q.id - 1] : '';
+        const statements = (typeof STATEMENTS !== 'undefined' ? STATEMENTS : window.STATEMENTS) || [];
+        const statement = statements[q.id - 1] || '';
         return `
           <div class="review-item ${right ? 'correct' : 'wrong'}">
             <p class="review-q">${i + 1}. ${escapeHtml(q.question)}</p>

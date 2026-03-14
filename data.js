@@ -26,6 +26,10 @@ const STATEMENTS = [
   '除明線安裝外，中性導線是不需經過開關掣箱的。'
 ];
 
+if (typeof window !== 'undefined') {
+  window.STATEMENTS = STATEMENTS;
+}
+
 /**
  * 模擬試題 - 題型、難度、出題方式參考 木模板大工（樓宇工程）模擬筆試試卷
  * 每題四選一，correctIndex 為正確選項 (0-based)
