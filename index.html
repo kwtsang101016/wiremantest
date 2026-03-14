@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a365d">
+  <title>電氣佈線工中工 · 筆試溫習</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Home -->
+    <main id="view-home" class="view active">
+      <header class="header">
+        <h1>電氣佈線工<br>中級工藝測試（中工）</h1>
+        <p class="subtitle">技術知識測試（筆試）溫習</p>
+      </header>
+      <nav class="mode-nav">
+        <a href="#" class="card card-revision" data-view="revision">
+          <span class="card-icon">📖</span>
+          <h2>溫習模式</h2>
+          <p>複習 20 條筆試參考內容</p>
+        </a>
+        <a href="#" class="card card-test" data-view="test">
+          <span class="card-icon">✏️</span>
+          <h2>測驗模式</h2>
+          <p>模擬筆試 · 10 題 · 答對 6 題合格</p>
+        </a>
+      </nav>
+      <footer class="footer-note">
+        參考：建造業議會 技術知識測試內容參考資料 IEW-SM-CN-01
+      </footer>
+    </main>
+
+    <!-- Revision mode -->
+    <main id="view-revision" class="view">
+      <header class="header compact">
+        <button type="button" class="btn-back" data-back aria-label="返回">←</button>
+        <h1>溫習模式</h1>
+      </header>
+      <section class="revision-content">
+        <p class="revision-intro">以下 20 條為準備筆試的參考內容，請熟讀。</p>
+        <ol id="statements-list" class="statements-list"></ol>
+      </section>
+    </main>
+
+    <!-- Test mode - intro -->
+    <main id="view-test-intro" class="view">
+      <header class="header compact">
+        <button type="button" class="btn-back" data-back aria-label="返回">←</button>
+        <h1>測驗模式</h1>
+      </header>
+      <section class="test-intro">
+        <p>模擬筆試共 <strong id="intro-total">10</strong> 題，四選一。答對 <strong>6 題或以上</strong>為合格。</p>
+        <p class="test-intro-note">題型與難度參考建造業議會中工筆試格式。</p>
+        <button type="button" id="btn-start-test" class="btn btn-primary">開始測驗</button>
+      </section>
+    </main>
+
+    <!-- Test mode - questions -->
+    <main id="view-test" class="view">
+      <header class="header compact test-header">
+        <button type="button" class="btn-back" id="btn-exit-test" aria-label="放棄測驗">←</button>
+        <div class="test-progress">
+          <span id="test-progress-text">第 1 / 10 題</span>
+          <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+        </div>
+      </header>
+      <section class="test-content">
+        <div id="question-container"></div>
+        <div class="test-actions">
+          <button type="button" id="btn-prev" class="btn btn-secondary" disabled>上一題</button>
+          <button type="button" id="btn-next" class="btn btn-primary">下一題</button>
+          <button type="button" id="btn-submit" class="btn btn-submit" style="display:none;">交卷</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Test result -->
+    <main id="view-result" class="view">
+      <header class="header compact">
+        <button type="button" class="btn-back" data-back aria-label="返回">←</button>
+        <h1>測驗結果</h1>
+      </header>
+      <section class="result-content">
+        <div id="result-score" class="result-score"></div>
+        <p id="result-message" class="result-message"></p>
+        <div id="result-review" class="result-review"></div>
+        <a href="#" class="btn btn-primary" data-view="test">再測一次</a>
+      </section>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

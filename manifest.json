@@ -1,0 +1,12 @@
+{
+  "name": "電氣佈線工中工 筆試溫習",
+  "short_name": "中工筆試",
+  "description": "電氣佈線工中級工藝測試（中工）技術知識筆試溫習與模擬測驗",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#1a365d",
+  "lang": "zh-HK",
+  "icons": []
+}
