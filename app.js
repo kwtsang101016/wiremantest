@@ -135,11 +135,13 @@
         const right = u === q.correctIndex;
         const your = u != null ? labels[u] + '. ' + q.options[u] : '未作答';
         const ans = labels[q.correctIndex] + '. ' + q.options[q.correctIndex];
+        const statement = STATEMENTS[q.id - 1] ? STATEMENTS[q.id - 1] : '';
         return `
           <div class="review-item ${right ? 'correct' : 'wrong'}">
             <p class="review-q">${i + 1}. ${escapeHtml(q.question)}</p>
             <p class="review-your">你的答案：${escapeHtml(your)}</p>
             ${!right ? `<p class="review-correct">正確答案：${escapeHtml(ans)}</p>` : ''}
+            ${statement ? `<p class="review-statement">參考：${escapeHtml(statement)}</p>` : ''}
           </div>
         `;
       }).join('');

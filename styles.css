@@ -472,6 +472,17 @@ body {
   color: var(--accent);
 }
 
+.review-statement {
+  margin: 0.5rem 0 0;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary);
+}
+
 .result-content > .btn {
   display: block;
   margin: 0 auto;
